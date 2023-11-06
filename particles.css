@@ -1,0 +1,299 @@
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container styling */
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/volcano_4k_hd-1920x1080.jpg");
+  background-size: cover;
+  background-position: center;
+
+  
+}
+
+/* Background overlay */
+.bg {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Menu styling */
+menu {
+  position: relative;
+  top: 10px;
+  color: aliceblue;
+  z-index: 100;
+  width: 80vw;
+  margin: auto;
+}
+
+menu::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  
+ 
+}
+
+menu:hover {
+  transform: translate(0px, 20px);
+  background: red;
+  transition: transform 300ms linear, background 643ms linear; /* Added transition for background */
+}
+
+menu:not(:hover) {
+  transform: translate(0px, 0px);
+  
+}
+
+menu ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  padding: 10px;
+}
+
+/* Glass effect */
+.glass {
+  backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.32);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+
+
+/* Text styling */
+#text {
+  color: aliceblue;
+  position: relative;
+  top: 10vh;
+  font-family: "Sofia", sans-serif;
+  font-size: 5em;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  z-index: 10;
+  text-align: center;
+  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.61, 0.355, 1) both,
+  letter-spacing 5000ms ease-in;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Second text block styling */
+#text2 {
+  color: aliceblue;
+  width: 40vw;
+  position: relative;
+  top: 30vh;
+  margin: auto;
+  padding: 30px;
+  z-index: 12;
+  text-align: center;
+ 
+  transition: 300ms linear ;
+}
+
+#text2:hover{
+
+  box-shadow: 0px 0px 84px 82px rgba(252, 172, 50, 0.3);
+  
+}
+
+
+/* Section styling */
+.card-wrapper {
+  position: relative;
+  width: 80%;
+  top: 50vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  z-index: 10;
+  transition: transform 300ms linear, background 643ms linear;
+ 
+}
+
+
+
+.card-wrapper:hover{
+  transform: translate(0px, -20px);
+  
+}
+
+.card-wrapper:not(:hover) {
+  transform: translate(0px, 0px);
+  transition: transform 300ms linear, background 643ms linear; /* Added transition for background */
+}
+
+/* Card styling */
+.card {
+  color: aliceblue;
+  margin: 20px;
+  padding: 20px;
+  margin-top: 60px ;
+  transition: transform .2s ease-in 0s;
+  
+}
+
+
+.card:hover {
+  transform: translate(0, -20px) scale(1.1);
+  background: red;
+}
+
+/* Paragraph within div styling */
+#text2, div > p, menu {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Social icons */
+.social {
+  position: absolute;
+  top: 30vh;
+  right: 30px;
+  width: fit-content;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.social::after {
+  content: '';
+  position: absolute;
+  top: -15vh;
+  right: -20px;
+  width: 200px;
+  height: 50vh;
+}
+
+.social:hover {
+  transform: translate(-20px, 0px);
+  background: red;
+  transition: transform 500ms cubic-bezier(0, 0, 0, 1), background 643ms linear; /* Added transition for background */
+}
+
+.social:not(:hover) {
+  transform: translate(0px, 0px);
+  transition: transform 500ms cubic-bezier(0, 0, 0, 1)
+}
+
+
+i {
+  color: aliceblue;
+  padding: 10px;
+}
+
+
+/* Particles container and animation */
+.layer-wrapper,
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.layer-wrapper{
+    z-index: 20;
+}
+
+.particles-container {
+  background: transparent;
+  overflow: hidden;
+  transition: 1.5s cubic-bezier(0, 0, 0, 0.98)
+}
+
+/* Particle animation and styling */
+.particle {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 3, 3, 1) 12%,
+    rgba(255, 147, 5, 1) 70%,
+    rgba(245, 204, 0, 1) 100%
+  );
+  background-blend-mode: normal;
+  -webkit-clip-path: polygon(
+    61% 20%,
+    36% 40%,
+    47% 65%,
+    76% 67%,
+    84% 44%,
+    70% 45%,
+    70% 31%
+  );
+  clip-path: polygon(
+    61% 20%,
+    36% 40%,
+    47% 65%,
+    76% 67%,
+    84% 44%,
+    70% 45%,
+    70% 31%
+  );
+
+}
+
+.animate {
+  position: absolute;
+  
+  top: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  
+  animation: redAnimation 1.5s 0.5 ease-in-out;
+  background-blend-mode: color-burn;
+}
+
+@keyframes redAnimation {
+  0% {
+    background: rgba(255, 0, 0, 0);
+    filter: contrast(0);
+  }
+  50% {
+    background: rgba(255, 145, 0, 0.068); /* Brighten to 120% at halfway point */
+    filter: contrast(2.8);
+  }
+  100% {
+    background: rgba(255, 0, 0, 0); /* Back to initial brightness */
+    filter: contrast(0);
+  }
+}
+
+
